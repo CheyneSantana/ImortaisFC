@@ -1,0 +1,44 @@
+@import '../globalSection.scss';
+
+.titulo {
+  font-size: 30px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media screen and (max-width: 479px) {
+    font-size: 20px;
+  }
+}
+
+.evento {
+  font-size: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btnContra {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1%;
+  width: 235px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    background: rgb(238, 238, 238);
+    padding: 2em;
+    border-radius: 4px;
+    margin-bottom: 7px;
+    display: grid;
+    grid-template-columns: 60px auto;
+
+    p {
+      font-weight: bold;
+      margin-left: 20px;
+    }
+  }
+}

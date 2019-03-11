@@ -1,0 +1,35 @@
+<section>
+  <div class="row"><label class="titulo">Entre em contato com os Imortais F.C.</label></div>
+  <hr />
+  <div class="row">
+    <div class="col-12">
+      <form>
+        <div class="form-group">
+          <div class="input-group">
+            <select class="form-control" (change)="opcaoSelecionada($event.target.value)" required>
+              <option value="0">--Selecione uma opção--</option>
+              <option *ngFor="let opcao of opcoes" value="{{opcao.name}}" [ngValue]="opcao">{{ opcao.name }}</option>
+            </select>
+          </div>
+          <div class="input-group">
+            <input [(ngModel)]="nomeContato" [ngModelOptions]="{standalone: true}" class="form-control" placeholder="Seu nome" required />
+          </div>
+          <div class="input-group">
+            <input [(ngModel)]="telefoneContato" [ngModelOptions]="{standalone: true}" [igxMask]="'(##) 00000-0000'" class="form-control" placeholder="(13) 98765-4321" required />
+          </div>
+          <div class="input-group">
+            <input [(ngModel)]="emailContato" [ngModelOptions]="{standalone: true}" class="form-control" placeholder="exemplo@gmail.com.br" required />
+          </div>
+          <div class="input-group">
+            <textarea class="form-control" rows="5" [ngModelOptions]="{standalone: true}" [(ngModel)]="comentarioContato" placeholder="Comentario" required></textarea>
+          </div>
+          <br />
+          <div class="input-group">
+            <button class="btn btn-success" (click)="EnviarEmail()">Enviar</button>
+            <button class="btn btn-warning" (click)="LimparCampos()">Limpar Campos</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

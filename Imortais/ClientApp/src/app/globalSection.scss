@@ -1,0 +1,9 @@
+section {
+  width: 100%;
+  margin: 0 auto;
+  padding: 2em;
+
+  @media screen and (max-width: 479px) {
+    width: 100%;
+  }
+}

@@ -1,0 +1,37 @@
+button {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+  color: black;
+
+  @media screen and (max-width: 479px) {
+    width: 100%;
+  }
+}
+
+button:hover {
+  background-color: black;
+  color: white;
+}
+
+video {
+  height: 70%;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media screen and (max-width: 479px) {
+    height: 100%;
+    width: 100%;
+    margin-top: 90%;
+  }
+}
+
+.bg {
+  background-image: url("../../assets/img/capas/49348893_1501789606590160_4776492262991331328_n.jpg");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

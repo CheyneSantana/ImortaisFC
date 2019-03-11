@@ -1,0 +1,63 @@
+<section>
+  <div class="row"><label class="titulo">Agenda Imortais</label></div>
+  <hr />
+  <div class="row">
+    <div class="col-12 col-md-3">
+      <ngb-datepicker #dp [(ngModel)]="data" (select)="getEvento()"></ngb-datepicker>
+      <br />
+      <button class="btn btn-success btnContra" (click)="open(content)">Marcar um contra</button>
+    </div>
+    <div class="col-12 col-md-9">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Eventos do dia {{ data.day }}/{{data.month}}/{{data.year}}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let evento of eventos">
+            <td>{{ evento.descricaoEvento }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Marcar um contra - Imortais F.C.</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="form-group">
+        <label for="dateContra">Data do contra</label>
+        <div class="input-group">
+          <input id="dateContra" [(ngModel)]="dataContra" class="form-control" placeholder="dd-mm-yyyy" name="dp" ngbDatepicker #dp="ngbDatepicker" />
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary calendar" (click)="dp.toggle()" type="button"></button>
+          </div>
+        </div>
+        <div class="input-group">
+          <input [(ngModel)]="representante" [ngModelOptions]="{standalone: true}" class="form-control" placeholder="Nome do Representante" required />
+        </div>
+        <div class="input-group">
+          <input [(ngModel)]="telefoneRepresentante" [ngModelOptions]="{standalone: true}" [igxMask]="'(##) 00000-0000'" class="form-control" placeholder="(13) 98765-4321" required />
+        </div>
+        <div class="input-group">
+          <input [(ngModel)]="nomeTime" [ngModelOptions]="{standalone: true}" class="form-control" placeholder="Nome do Time" required/>
+        </div>
+        <div class="input-group">
+          <input [(ngModel)]="emailRepresentante" [ngModelOptions]="{standalone: true}" class="form-control" placeholder="seuemail@seuprovedor.com.br" required />
+        </div>
+
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save Click')">Salvar</button>
+  </div>
+</ng-template>
