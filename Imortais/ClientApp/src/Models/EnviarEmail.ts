@@ -3,5 +3,5 @@ export class EnviarEmail {
   nomeTime: string;
   emailRepresentante: string;
   telefoneRepresentante: string;
-  dataContra: string;
+  dataContra: Date;
 }

@@ -37,7 +37,7 @@ namespace Imortais.Service
         private string montarBody()
         {
             StringBuilder sb = new StringBuilder();
-            sb.AppendLine("O time " + this.enviarEmail.nomeTime + " deseja marcar um contra para o dia " + this.enviarEmail.dataContra);
+            sb.AppendLine("O time " + this.enviarEmail.nomeTime + " deseja marcar um contra para o dia " + this.enviarEmail.dataContra.Day + "/" + this.enviarEmail.dataContra.Month + "/" + this.enviarEmail.dataContra.Year);
             sb.AppendLine("Entrar em contato com o representante " + this.enviarEmail.representante + " no telefone: " + this.enviarEmail.telefoneRepresentante);
             sb.AppendLine("Ou pelo email: " + this.enviarEmail.emailRepresentante);
 

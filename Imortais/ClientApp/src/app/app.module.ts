@@ -4,10 +4,10 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule, MatCheckboxModule } from '@angular/material';
+import { MatButtonModule, MatCheckboxModule, MatFormFieldModule, MatInputModule, MatAutocompleteModule, MatSidenavModule, MatIconModule, MatToolbarModule, MatDatepickerModule, MatNativeDateModule, MatDialogModule, MatProgressBarModule, MatChipsModule } from '@angular/material';
 import { IgxGridModule, IgxMaskModule, IgxInputGroupModule  } from 'igniteui-angular';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { ToastrModule } from 'ng6-toastr-notifications';
@@ -25,6 +25,7 @@ import { ContatoComponent } from './contato/contato.component';
 import { HomeComponent } from './home/home.component';
 import { MenuComponent } from './menu/menu.component';
 import { ElencoComponent } from './elenco/elenco.component';
+import { popUpAgenda } from './agenda-imortais/popUpAgenda';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { ElencoComponent } from './elenco/elenco.component';
     ContatoComponent,
     HomeComponent,
     MenuComponent,
-    ElencoComponent
+    ElencoComponent,
+    popUpAgenda
   ],
   imports: [
     BrowserModule,
@@ -47,17 +49,29 @@ import { ElencoComponent } from './elenco/elenco.component';
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatButtonModule,
-    MatCheckboxModule,
     IgxGridModule,
     IgxInputGroupModule,
     IgxMaskModule,
     AngularFontAwesomeModule,
     ToastrModule.forRoot(),
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    FormsModule,
+    MatAutocompleteModule,
+    ReactiveFormsModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatToolbarModule,
+    MatListModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     MatCardModule,
-    MatDividerModule,
-    MatListModule
+    MatDialogModule,
+    MatProgressBarModule,
+    MatChipsModule
   ],
+  entryComponents: [AgendaImortaisComponent, popUpAgenda],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Imortais.Controllers
 {
     [Route("api/[controller]")]
-    public class AgendaImortaisController : Controller
+    public class AgendaImortaisController : ControllerBase
     {
         private readonly ImortaisContext _context;
         public AgendaImortaisController(ImortaisContext context)
@@ -27,11 +27,11 @@ namespace Imortais.Controllers
             {
                 AgendaService agendaService = new AgendaService(this._context);
                 agendaService.BuscarEventos(evento.DataEvento);
-                return Json(agendaService.eventos);
+                return Ok(agendaService.eventos);
             }
             catch(Exception ex)
             {
-                return BadRequest(ex.Message);
+                return BadRequest( new { message = ex.Message });
             }
         }
 
@@ -44,11 +44,11 @@ namespace Imortais.Controllers
                 AgendaService agendaService = new AgendaService(this._context);
                 agendaService.EnviarEmail(value);
 
-                return Json("Enviado com sucesso!");
+                return Ok();
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return BadRequest(new { message = ex.Message });
             }
         }
     }

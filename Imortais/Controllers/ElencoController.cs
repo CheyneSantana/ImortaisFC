@@ -11,7 +11,7 @@ namespace Imortais.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ElencoController : Controller
+    public class ElencoController : ControllerBase
     {
         private readonly ImortaisContext _context;
 
@@ -28,11 +28,11 @@ namespace Imortais.Controllers
                 ElencoService elencoService = new ElencoService(this._context);
                 elencoService.BuscarElenco();
 
-                return Json(elencoService.elenco);
+                return Ok(elencoService.elenco);
             }
             catch(Exception ex)
             {
-                return BadRequest(ex.Message);
+                return BadRequest(new { message = ex.Message });
             }
         }
     }

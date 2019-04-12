@@ -14,6 +14,6 @@ namespace Imortais.Models
         public string nomeTime { get; set; }
         public string emailRepresentante { get; set; }
         public string telefoneRepresentante { get; set; }
-        public string dataContra { get; set; }
+        public DateTime dataContra { get; set; }
     }
 }
