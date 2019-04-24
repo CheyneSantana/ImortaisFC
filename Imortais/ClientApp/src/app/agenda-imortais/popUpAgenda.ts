@@ -8,7 +8,8 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
 @Component({
   selector: 'popUpAgenda',
-  templateUrl: 'popUpAgenda.html'
+  templateUrl: 'popUpAgenda.html',
+  styleUrls: ['./popUpAgenda.scss']
 })
 export class popUpAgenda implements OnInit {
   private dataContra: Date;
